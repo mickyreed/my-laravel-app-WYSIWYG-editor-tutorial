@@ -1245,7 +1245,7 @@ public function submitForm(Request $request)
 
 # Tutorial PART 2
 
-# Step-by-Step Guide to Adding and customising a WYSIWYG Content Editor in Laravel 11
+## Step-by-Step Guide to Adding and customising a WYSIWYG Content Editor in Laravel 11
 
 ## In Part 1 of our Tutorial:
 
