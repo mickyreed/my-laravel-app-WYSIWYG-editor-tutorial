@@ -735,7 +735,7 @@ removed the existing link references and replace them with the following:
 ```
 
 - If you visit the landing page or form page now, you will see the styles are not working properly.
-  This is becuase we have not updated our views to use tailwind css, we will do this next.
+  This is because we have not updated our views to use tailwind css, we will do this next.
 
 <br>
 

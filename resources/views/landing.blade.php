@@ -3,17 +3,23 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Laravel 11 Landing Page</title>
-    <link
-        rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-    />
+    <title>Landing Page</title>
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body>
-<div class="container text-center mt-5">
-    <h1>Welcome to My Laravel 11 App</h1>
-    <p>This is a basic landing page built with Laravel.</p>
-    <a href="{{ route('form.show') }}" class="btn btn-primary">Go to Form</a>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+<div class="text-center">
+    <h1 class="text-4xl font-bold text-gray-800">
+        Welcome to My Laravel App
+    </h1>
+    <p class="text-gray-600 mt-4">
+        Click the button below to navigate to the form page.
+    </p>
+    <a
+        href="{{ route('form.show') }}"
+        class="mt-6 inline-block bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
+    >
+        Go to Form
+    </a>
 </div>
 </body>
 </html>
