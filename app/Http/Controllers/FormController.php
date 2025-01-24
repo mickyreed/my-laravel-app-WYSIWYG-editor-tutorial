@@ -51,4 +51,10 @@ class FormController extends Controller
         // Redirect with success message
         return redirect()->back()->with('success', 'Form submitted successfully!');
     }
+
+    public function index()
+    {
+        $submissions = Submission::paginate(5); // Fetch 5 items per page
+        return view('submissions', compact('submissions'));
+    }
 }
