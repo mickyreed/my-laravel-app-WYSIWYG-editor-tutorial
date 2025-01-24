@@ -1517,6 +1517,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
 <br>
 
+### Step 5 - Updating your submissions.blade.php
+
+**We need to call the markdownToHtml function to render the view as html rather than markdown**
+
+<br>
+
+- Open submissions.blade.php and find the following line of code
+
+```php
+{{ $submission->message }}
+```
+
+<br>
+
+- Now change it to the new code below.
+
+```php
+{!! markdownToHtml($submission->message) !!}
+```
+
+<br>
+
+### Step 6 - Testing your editor
+
 ### Step 5 - Testing your editor
 
 - You should now have a functional CK Editor and be able to save your message content into markdown,

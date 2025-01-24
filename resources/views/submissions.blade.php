@@ -57,7 +57,7 @@
                     <td
                         class="px-6 py-4 border-b border-gray-300 text-gray-800 message-content"
                     >
-                        {{ $submission->message }}
+                        {!! markdownToHtml($submission->message) !!}
                     </td>
                 </tr>
             @empty

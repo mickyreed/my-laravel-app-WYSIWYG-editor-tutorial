@@ -14,43 +14,27 @@
  *
  */
 
-namespace app;
-
-use League\CommonMark\CommonMarkConverter;
 use League\HTMLToMarkdown\HtmlConverter;
+use League\CommonMark\CommonMarkConverter;
 
-
-class ContentConverter
-{
-    /**
-     * Convert HTML to Markdown
-     *
-     * @param string $html HTML content to convert
-     * @return string Markdown content
-     */
-    public static function htmlToMarkdown($html)
-    {
+if (!function_exists('htmlToMarkdown')) {
+    function htmlToMarkdown($html) {
         $converter = new HtmlConverter([
+            'header_style' => 'atx', // This ensures # style headers
             'strip_tags' => false,
             'remove_nodes' => 'script style',
         ]);
-
         return $converter->convert($html);
     }
+}
 
-    /**
-     * Convert Markdown to HTML
-     *
-     * @param string $markdown Markdown content to convert
-     * @return string HTML content
-     */
-    public static function markdownToHtml($markdown)
+if (!function_exists('markdownToHtml')) {
+    function markdownToHtml($markdown)
     {
         $converter = new CommonMarkConverter([
             'html_input' => 'allow',
             'allow_unsafe_links' => false,
         ]);
-
         return $converter->convertToHtml($markdown);
     }
 }
