@@ -1,5 +1,21 @@
 import './bootstrap';
-import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+//import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+
+import {
+    ClassicEditor,
+    AutoLink,
+    Autosave,
+    Bold,
+    Essentials,
+    FontColor,
+    FontSize,
+    Heading,
+    Italic,
+    Link,
+    Paragraph,
+    SpecialCharacters
+} from 'ckeditor5';
+
 import 'ckeditor5/ckeditor5.css';
 import '../css/app.css';
 
@@ -11,14 +27,36 @@ document.addEventListener('DOMContentLoaded', () => {
             .create(messageEditor, {
                 licenseKey: 'GPL',
                 toolbar: {
-                    items: ['heading', '|', 'bold', 'italic', '|', 'link', '|', 'redo', 'undo' ],
+                    items: [
+                        'heading', '|',
+                        'fontSize', 'fontColor', '|',
+                        'bold', 'italic', '|',
+                        'link', '|',
+                        'redo', 'undo' ],
                     shouldNotGroupWhenFull: false
                 },
 
-                // Add some Default Paragraph heading styles to select from
-                //  Example: When a user selects "Heading 1" from the toolbar,
-                //  the editor will format the selected text as an <h1> element,
-                //  styled with the class ck-heading_heading1.
+                plugins: [
+                    AutoLink,
+                    Autosave,
+                    Bold,
+                    Essentials,
+                    FontColor,
+                    FontSize,
+                    Heading,
+                    Italic,
+                    Link,
+                    Paragraph,
+                    SpecialCharacters
+                ],
+
+                // Add some Default Font Sizes to select from
+                fontSize: {
+                    options: [10, 12, 14, 'default', 18, 20, 22],
+                    supportAllValues: true
+                },
+
+                // Add some Default Paragraph heading Sizes to select from
                 heading: {
                     options: [
                         { model: 'paragraph', title: 'Paragraph', class: 'ck-heading_paragraph' },
@@ -28,13 +66,42 @@ document.addEventListener('DOMContentLoaded', () => {
                     ]
                 },
 
+                // Add Some default colours to select in the editor (Other then the colour Picker)
+                fontColor: {
+                    colors: [
+                        {
+                            color: 'rgb(0, 0, 0)',
+                            label: 'Black'
+                        },
+                        {
+                            color: 'rgb(230, 0, 0)',
+                            label: 'Red'
+                        },
+                        {
+                            color: 'rgb(0, 112, 0)',
+                            label: 'Green'
+                        },
+                        {
+                            color: 'rgb(0, 0, 255)',
+                            label: 'Blue'
+                        },
+                        {
+                            color: 'rgb(255, 165, 0)',
+                            label: 'Orange'
+                        },
+                        {
+                            color: 'rgb(128, 0, 128)',
+                            label: 'Purple'
+                        }
+                    ]
+                },
+
                 // Hide or Show the menu Bar at the top of the editor
-                //  There is a tabbed menu bar available to use, however we will set this as false as we wont be using it
                 menuBar: {
                     isVisible: false
                 },
 
-                placeholder: 'Enter your message here...',
+                placeholder: 'Enter your message...',
             })
             .catch(error => {
                 console.error(error);

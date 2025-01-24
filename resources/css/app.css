@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Make the editor height larger to show this is a multiline editor */
+.ck-editor__editable_inline {
+    min-height: 200px;
+}
+
 /* Preserve the Paragraph Heading Sizes in the Editor */
 .ck-content h1 {
     font-size: 2em;
@@ -22,16 +27,21 @@
 /* Preserve the Paragraph Heading styles in the submissions view */
 .message-content h1 {
     font-size: 2em;
-    font-weight: bold;
     margin-bottom: 0.5em;
 }
+
 .message-content h2 {
     font-size: 1.5em;
-    font-weight: bold;
     margin-bottom: 0.5em;
 }
+
 .message-content h3 {
     font-size: 1.17em;
-    font-weight: bold;
     margin-bottom: 0.5em;
+}
+
+/* Add Blue Underline for Links */
+.message-content a {
+    color: #0066cc;
+    text-decoration: underline;
 }
