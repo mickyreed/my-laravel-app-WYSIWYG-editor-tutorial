@@ -1138,7 +1138,7 @@ class SubmissionFactory extends Factory
 
 ## Add a Redirect to the Landing Page
 
-- In the FormController method where you handle the form submission (e.g., store method),
+- In the FormController method where you handle the form submission (e.g., submitForm method),
   Let's Modify the code, making it more concise, and modifying the redirect() as below to ensure it redirects to the landing page when the submission is successful:
   Our Form.blade.php already has a redirect if the submission doesnt validate, so we dont need to change this.
 
