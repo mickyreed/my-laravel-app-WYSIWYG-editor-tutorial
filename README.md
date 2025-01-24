@@ -4,7 +4,7 @@
 
 <a name="readme-top"></a>
 
-</br>
+<br>
 
 #### Built With
 
@@ -18,7 +18,7 @@
 [![HTML][HTML]][HTML-url]
 [![CSS][CSS-shield]][CSS-url]
 
-</br>
+<br>
 
 ## Table of Contents
 
@@ -37,7 +37,7 @@
     - [Add a Success Message to the Landing Page](#add-a-success-message-to-the-landing-page)
     - [Tutorial Part 1 Summary](#what-we-achieved-in-this-tutorial)
 
-</br>
+<br>
 
 - [Tutorial PART 2 - Implementing the WYSIWYG Editor](#tutorial-part-2)
 
@@ -48,14 +48,15 @@
     - [Adding more Styling options](#adding-more-styling-options)
     - [Tutorial Part 2 Summary](#what-we-have-achieved)
     - [Final Thoughts](#final-thoughts)
+  
   <p align="right">(<a href="#readme-top">back to top</a>)</p>
-  </br>
-  </br>
-  </br>
+
+  <br>
+  <br>
 
 # Tutorial Part 1:
 
-# Creating a basic Laravel 11 & Tailwind CSS mutli-page Application with navigation, a submittable form, and database
+# Creating a basic Laravel 11 & Tailwind CSS multi-page Application with navigation, a submittable form, and database
 
 ## Step-by-Step Guide to Creating a Basic Laravel 11 App including:
 
@@ -98,7 +99,7 @@
    cd my-laravel-app
    ```
 
-   </br>
+   <br>
 
 4. **Run the development server**:
 
