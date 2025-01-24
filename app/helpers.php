@@ -2,7 +2,7 @@
 
 /**
  * helpers
- * A helper file with functions to convert HTML to Markdown and Markdown to HTML
+ * helper functions to convert HTML to Markdown and Markdown to HTML
  * using League\HTMLToMarkdown and League/CommonMark
  *
  * Filename:        helpers.php
@@ -14,8 +14,10 @@
  *
  */
 
+use League\CommonMark\GithubFlavoredMarkdownConverter;
 use League\HTMLToMarkdown\HtmlConverter;
 use League\CommonMark\CommonMarkConverter;
+
 
 if (!function_exists('htmlToMarkdown')) {
     function htmlToMarkdown($html) {
@@ -29,12 +31,20 @@ if (!function_exists('htmlToMarkdown')) {
 }
 
 if (!function_exists('markdownToHtml')) {
-    function markdownToHtml($markdown)
-    {
-        $converter = new CommonMarkConverter([
-            'html_input' => 'allow',
+//    function markdownToHtml($markdown) {
+//        $converter = new CommonMarkConverter([
+//            'html_input' => 'allow',
+//            'allow_unsafe_links' => false,
+//        ]);
+//        return $converter->convertToHtml($markdown);
+//    }
+    function markdownToHtml($markdown) {
+        $config = [
+            'html_input' => 'allow', // this ensures our font colours are displayed in the submissions view
             'allow_unsafe_links' => false,
-        ]);
-        return $converter->convertToHtml($markdown);
+        ];
+
+        $converter = new GithubFlavoredMarkdownConverter($config);
+        return $converter->convert($markdown);
     }
 }
