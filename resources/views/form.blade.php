@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
@@ -55,6 +56,7 @@
             <small class="text-danger">{{ $message }}</small> @enderror
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
+        <a href="/" class="btn btn-secondary">Cancel</a>
     </form>
 </div>
 </body>

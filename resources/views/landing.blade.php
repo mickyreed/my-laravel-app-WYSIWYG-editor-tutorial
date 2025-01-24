@@ -13,6 +13,7 @@
 <div class="container text-center mt-5">
     <h1>Welcome to My Laravel 11 App</h1>
     <p>This is a basic landing page built with Laravel.</p>
+    <a href="{{ route('form.show') }}" class="btn btn-primary">Go to Form</a>
 </div>
 </body>
 </html>
