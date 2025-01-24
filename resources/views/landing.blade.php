@@ -20,6 +20,12 @@
     >
         Go to Form
     </a>
+    <a
+        href="{{ route('form.index') }}"
+        class="mt-6 inline-block bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded"
+    >
+        View Submissions
+    </a>
 </div>
 </body>
 </html>
