@@ -18,37 +18,39 @@
 [![HTML][HTML]][HTML-url]
 [![CSS][CSS-shield]][CSS-url]
 
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+
 <br>
 
 ## Table of Contents
 
 - [Tutorial Part 1 - Building the basic Laravel 11 Application](#tutorial-part-1)
 
-    - [Project Requirements](#step-by-step-guide-to-creating-a-basic-laravel-11-app-including)
-    - [Install Laravel 11](#install-laravel-11)
-    - [Configure the Application](#configure-the-application)
-    - [Create a Static Landing Page](#create-a-static-landing-page)
-    - [Adding a Form with Validation and Database Storage](#adding-a-form-with-validation-and-database-storage)
-    - [Adding Navigation Buttons to a Laravel Application](#adding-navigation-buttons-to-a-laravel-application)
-    - [Styling our App with Tailwind CSS](#styling-our-app-with-tailwind-css)
-    - [Displaying the Submissions (with Pagination)](#displaying-the-submissions-with-pagination)
-    - [Optional - Seed Test Data](#optional-seed-test-data)
-    - [Redirect to the Landing Page](#redirect-to-the-landing-page)
-    - [Add a Success Message to the Landing Page](#add-a-success-message-to-the-landing-page)
-    - [Tutorial Part 1 Summary](#what-we-achieved-in-this-tutorial)
+  - [Project Requirements](#step-by-step-guide-to-creating-a-basic-laravel-11-app-including)
+  - [Install Laravel 11](#install-laravel-11)
+  - [Configure the Application](#configure-the-application)
+  - [Create a Static Landing Page](#create-a-static-landing-page)
+  - [Adding a Form with Validation and Database Storage](#adding-a-form-with-validation-and-database-storage)
+  - [Adding Navigation Buttons to a Laravel Application](#adding-navigation-buttons-to-a-laravel-application)
+  - [Styling our App with Tailwind CSS](#styling-our-app-with-tailwind-css)
+  - [Displaying the Submissions (with Pagination)](#displaying-the-submissions-with-pagination)
+  - [Optional - Seed Test Data](#optional-seed-test-data)
+  - [Redirect to the Landing Page](#redirect-to-the-landing-page)
+  - [Add a Success Message to the Landing Page](#add-a-success-message-to-the-landing-page)
+  - [Tutorial Part 1 Summary](#what-we-achieved-in-this-tutorial)
 
 <br>
 
 - [Tutorial PART 2 - Implementing the WYSIWYG Editor](#tutorial-part-2)
 
-    - [Setup and Package Installation](#setup-aand-package-installation)
-    - [Create Helper Functions](#create-helper-functions)
-    - [Improving the editor by customising some of our options](#improving-the-editor-by-customising-some-of-our-options)
-    - [Add Styles for Paragraph headings](#add-styles-for-paragraph-headings)
-    - [Adding more Styling options](#adding-more-styling-options)
-    - [Tutorial Part 2 Summary](#what-we-have-achieved)
-    - [Final Thoughts](#final-thoughts)
-  
+  - [Setup and Package Installation](#setup-aand-package-installation)
+  - [Create Helper Functions](#create-helper-functions)
+  - [Improving the editor by customising some of our options](#improving-the-editor-by-customising-some-of-our-options)
+  - [Add Styles for Paragraph headings](#add-styles-for-paragraph-headings)
+  - [Adding more Styling options](#adding-more-styling-options)
+  - [Tutorial Part 2 Summary](#what-we-have-achieved)
+  - [Final Thoughts](#final-thoughts)
+
   <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
   <br>
@@ -76,14 +78,14 @@
 
 1. **Ensure prerequisites are installed**:
 
-    - PHP (>= 8.3.1.1)
-    - Composer (latest version)
-    - MySQL (>=8.0.30)
-    - Laragon (>= 6.0 220916) (we will be using PhpMyAdmin to access the database)
-    - Laravel 11
-    - PhpStorm
-   
-    <br>
+   - PHP (>= 8.3.1.1)
+   - Composer (latest version)
+   - MySQL (>=8.0.30)
+   - Laragon (>= 6.0 220916) (we will be using PhpMyAdmin to access the database)
+   - Laravel 11
+   - PhpStorm
+
+   <br>
 
 2. **Install Laravel via Composer**:
 
@@ -119,7 +121,7 @@
 
 1. **Set up your environment**:
 
-    - Rename .env.example to .env (if not already done):
+   - Rename .env.example to .env (if not already done):
 
    ```bash
    cp .env.example .env
@@ -127,7 +129,7 @@
 
    <br>
 
-    - Generate an application key:
+   - Generate an application key:
 
    ```bash
    php artisan key:generate
@@ -137,7 +139,7 @@
 
 2. **Configure database settings**:
 
-    - Open .env and update the database credentials:
+   - Open .env and update the database credentials:
 
    ```dotenv
        DB_CONNECTION=mysql
@@ -151,9 +153,9 @@
       <br>
 
 3. **Create the database my_database in MySQL.**
-    - Open up Laragon and select Database
-    - Log into PhpMyAdmin using the UserName root with no password
-    - Create a new database with the name as noted under DB_DATABASE above which in this case is my_database
+   - Open up Laragon and select Database
+   - Log into PhpMyAdmin using the UserName root with no password
+   - Create a new database with the name as noted under DB_DATABASE above which in this case is my_database
 
 <br>
 
@@ -177,8 +179,8 @@
 
 2. **Add a method for the landing page**:
 
-    - Open up PhpStorm and then navigate to and open up your newly created project folder
-    - Open app/Http/Controllers/StaticPageController.php and add:
+   - Open up PhpStorm and then navigate to and open up your newly created project folder
+   - Open app/Http/Controllers/StaticPageController.php and add:
 
    ```php
    <?php
@@ -216,7 +218,7 @@
 
 3. **Create a View for the Landing Page**:
 
-    - Create a new file at resources/views/landing.blade.php:
+   - Create a new file at resources/views/landing.blade.php:
 
 ```bash
 touch resources/views/landing.blade.php
@@ -250,7 +252,7 @@ touch resources/views/landing.blade.php
 
 4. **Define a Route**:
 
-    - Open routes/web.php and update it to the following (commenting out or removing the existing welcome route):
+   - Open routes/web.php and update it to the following (commenting out or removing the existing welcome route):
 
    ```php
        use Illuminate\Support\Facades\Route;
@@ -271,7 +273,6 @@ touch resources/views/landing.blade.php
 This is the basic foundation for our App, we will extend it with a form in the next steps.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 ## Adding a Form with Validation and Database Storage:
 
@@ -647,11 +648,11 @@ Route::post('/form', [FormController::class, 'submitForm'])->name('form.submit')
 
 2. **On the landing page: http://127.0.0.1:8000/**:
 
-    - Verify the "Go to Form" button redirects to the form page.
+   - Verify the "Go to Form" button redirects to the form page.
 
 3. **On the the form page: http://127.0.0.1:8000/form**:
 
-    - Verify the "Cancel" button redirects back to the landing page.
+   - Verify the "Cancel" button redirects back to the landing page.
 
 <br>
 
@@ -661,7 +662,7 @@ Route::post('/form', [FormController::class, 'submitForm'])->name('form.submit')
 - We will be using Tailwind CSS instead of Bootstrap.
 - So let's update the setup to work with Tailwind CSS:
 - We will also add "Go to Form" and "Cancel" buttons to make it easy to navigation between the views
-  
+
 <br>
 
 ### Step 1: Verify Tailwind CSS Installation
@@ -870,12 +871,11 @@ removed the existing link references and replace them with the following:
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
 ## Displaying the Submissions (with Pagination)
 
 - Lets create a view to display the submissions information,
   and have these use pagination to show 5 submissions per page.
-  
+
 <br>
 
 ### Step 1: Add a New Method to FormController
@@ -1026,7 +1026,7 @@ touch resources/views/submissions.blade.php
 ## Optional - Seed Test Data
 
 - If your submissions table is empty, you can seed some test data:
-  
+
 <br>
 
 ### Step 1. Create a Seeder
@@ -1135,7 +1135,6 @@ class SubmissionFactory extends Factory
 - This will populate your database with dummy data, making it easier to test the pagination
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 ## Add a Redirect to the Landing Page
 
@@ -1272,17 +1271,16 @@ public function submitForm(Request $request)
 - Laragon (>= 6.0 220916) (we will be using PhpMyAdmin to access the database)
 - Laravel 11
 - Our Previously built basic Laravel Application (if you havent done this yet, you need to complete this first!)
-- 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+- <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Setup and Package Installation
 
 ### Install required packages:
 
 - Lets install the following packages via composer
-    - The WYSIWYG Editor - ckeditor/ckeditor
-    - html to markdown converter - league/htmlToMarkdown
-    - markdown to html converter - league/commonmark library
+  - The WYSIWYG Editor - ckeditor/ckeditor
+  - html to markdown converter - league/htmlToMarkdown
+  - markdown to html converter - league/commonmark library
 
 <br>
 
@@ -1516,6 +1514,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 ```
+
 <br>
 
 ### Step 5 - Testing your editor
@@ -1532,9 +1531,9 @@ document.addEventListener('DOMContentLoaded', () => {
 ### Step 1: Open resources/js/app.js and update your code to the following,
 
 - What we are adding is:
-    - additional toolbar items
-    - An array of default options for Paragraph Heading styles:
-    - An option to hide or show the menuBar at the top
+  - additional toolbar items
+  - An array of default options for Paragraph Heading styles:
+  - An option to hide or show the menuBar at the top
 
 <br>
 
@@ -1583,6 +1582,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 ```
+
 <br>
 
 ### Step 2 - Update your HTML-to-Markdown conversion in your helper file (app/helpers.php):
@@ -1669,10 +1669,10 @@ if (!function_exists('markdownToHtml')) {
 
 - GitHub Flavored Markdown (GFM) is an extended version of CommonMark with additional features, such as:
 
-    - Support for tables.
-    - Strikethrough text.
-    - Automatic URL linking.
-    - Task lists (- [ ] and - [x] syntax).
+  - Support for tables.
+  - Strikethrough text.
+  - Automatic URL linking.
+  - Task lists (- [ ] and - [x] syntax).
 
 <br>
 
@@ -1685,7 +1685,7 @@ if (!function_exists('markdownToHtml')) {
 
   Prevents unsafe links (e.g., javascript: or other malicious URLs) from being included in the HTML output.
   This is a security measure to protect users from XSS attacks.
-  
+
   <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Add Styles for Paragraph headings
@@ -1986,9 +1986,10 @@ document.addEventListener('DOMContentLoaded', () => {
 - We have added a 'helper' class to help facilitate this
 - We have added some additional css to get the stylimg working for some of the elements in the WYSIWYG editor
 - We have now unlocked some more options for our editor.
-    - Added some differnt Font sizes to select from.
-    - Added Font Colours (including a few default colours to select from)
-  
+
+  - Added some differnt Font sizes to select from.
+  - Added Font Colours (including a few default colours to select from)
+
   <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Final Thoughts
@@ -2033,6 +2034,8 @@ Project GitHub Link: [my-laravel-app-WYSIWYG-editor-tutorial](https://github.com
 ## License
 
 ### MIT License
+
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 
 **Copyright (c) [2025] [Michael Reed]**
 
@@ -2080,4 +2083,3 @@ SOFTWARE.
 [GitHub-url]: https://github.com
 [MySQL-shield]: https://img.shields.io/badge/mysql-4479A1.svg?style=for-the-badge&logo=mysql&logoColor=white
 [MySQL-url]: https://www.mysql.com/
-
