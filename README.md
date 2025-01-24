@@ -13,6 +13,7 @@
 [![GitHub][GitHub-shield]][GitHub-url]
 [![MySQL][MySQL-shield]][MySQL-url]
 
+[![PHPStorm][Jetbrains.com]][PHPStorm-url]
 [![Laravel][Laravel.shield]][Laravel-url]
 [![HTML][HTML]][HTML-url]
 [![CSS][CSS-shield]][CSS-url]
@@ -69,7 +70,6 @@
     - Redirection to the landing page with a success message upon a successful submission
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-</br>
 
 ## Install Laravel 11
 
@@ -81,7 +81,8 @@
     - Laragon (>= 6.0 220916) (we will be using PhpMyAdmin to access the database)
     - Laravel 11
     - PhpStorm
-      </br>
+   
+    <br>
 
 2. **Install Laravel via Composer**:
 
@@ -105,14 +106,13 @@
    php artisan serve
    ```
 
-      </br>
+<br>
 
 ### The application will be accessible at http://127.0.0.1:8000.
 
-</br>
+<br>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-</br>
 
 ## Configure the Application
 
@@ -124,7 +124,7 @@
    cp .env.example .env
    ```
 
-   </br>
+   <br>
 
     - Generate an application key:
 
@@ -132,7 +132,7 @@
    php artisan key:generate
    ```
 
-   </br>
+   <br>
 
 2. **Configure database settings**:
 
@@ -147,14 +147,14 @@
        DB_PASSWORD=
    ```
 
-      </br>
+      <br>
 
 3. **Create the database my_database in MySQL.**
     - Open up Laragon and select Database
     - Log into PhpMyAdmin using the UserName root with no password
     - Create a new database with the name as noted under DB_DATABASE above which in this case is my_database
 
-</br>
+<br>
 
 4. **Run the migrations**: Apply the changes to create the table in the database:
 
@@ -163,7 +163,6 @@
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-</br>
 
 ## Create a Static Landing Page
 
@@ -173,7 +172,7 @@
    php artisan make:controller StaticPageController
    ```
 
-   </br>
+   <br>
 
 2. **Add a method for the landing page**:
 
@@ -212,7 +211,7 @@
     }
    ```
 
- </br>
+ <br>
 
 3. **Create a View for the Landing Page**:
 
@@ -246,7 +245,7 @@ touch resources/views/landing.blade.php
 </html>
 ```
 
-   </br>
+   <br>
 
 4. **Define a Route**:
 
@@ -263,7 +262,7 @@ touch resources/views/landing.blade.php
        //}) ;
    ```
 
-   </br>
+   <br>
 
 5. **Verify the Landing Page**:  
    Visit http://127.0.0.1:8000 in your browser. You should see the landing page.
@@ -271,7 +270,7 @@ touch resources/views/landing.blade.php
 This is the basic foundation for our App, we will extend it with a form in the next steps.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-</br>
+
 
 ## Adding a Form with Validation and Database Storage:
 
@@ -285,7 +284,7 @@ This is the basic foundation for our App, we will extend it with a form in the n
     php artisan make:migration create_submissions_table
 ```
 
-</br>
+<br>
 
 2. **Define the Table Structure**: Open the generated migration file in database/migrations/
    (e.g., 2024_12_17_000000_create_submissions_table.php) and edit it:
@@ -303,7 +302,7 @@ This is the basic foundation for our App, we will extend it with a form in the n
     }
 ```
 
-</br>
+<br>
 
 3. **Run the Migration**: Apply the changes to create the table in the database:
 
@@ -311,7 +310,7 @@ This is the basic foundation for our App, we will extend it with a form in the n
     php artisan migrate
 ```
 
-</br>
+<br>
 
 ### Step 2: Create a Model for the Submissions Table
 
@@ -321,7 +320,7 @@ This is the basic foundation for our App, we will extend it with a form in the n
     php artisan make:model Submission
 ```
 
-</br>
+<br>
 
 2. **Define Fillable Fields**: Open app/Models/Submission.php **and configure the model:**
 
@@ -354,7 +353,7 @@ This is the basic foundation for our App, we will extend it with a form in the n
     }
 ```
 
-</br>
+<br>
 
 ### Step 3: Create a Form Controller
 
@@ -364,7 +363,7 @@ This is the basic foundation for our App, we will extend it with a form in the n
     php artisan make:controller FormController
 ```
 
-</br>
+<br>
 
 2. **Define Methods in the Controller: Open** app/Http/Controllers/FormController.php **and add the following methods:**
 
@@ -425,8 +424,7 @@ This is the basic foundation for our App, we will extend it with a form in the n
     }
 ```
 
-</br>
-</br>
+<br>
 
 ### Step 4: Create the Form View
 
@@ -500,7 +498,7 @@ touch resources/views/form.blade.php
 </html>
 ```
 
-</br>
+<br>
 
 ### Step 5: Define Routes
 
@@ -513,7 +511,7 @@ Route::get('/form', [FormController::class, 'showForm'])->name('form.show');
 Route::post('/form', [FormController::class, 'submitForm'])->name('form.submit');
 ```
 
-</br>
+<br>
 
 ### Step 6: Test the Form
 
@@ -521,8 +519,7 @@ Route::post('/form', [FormController::class, 'submitForm'])->name('form.submit')
 2. **Fill in the form and submit.**:
 3. **Open up the database in phpMyAdmin to Check your database table submissions to verify the data has been saved.**:
 
-</br>
-</br>
+<br>
 
 ## Adding Navigation Buttons to a Laravel Application
 
@@ -552,7 +549,7 @@ Route::post('/form', [FormController::class, 'submitForm'])->name('form.submit')
 </html>
 ```
 
-</br>
+<br>
 
 2. **Check the Route for the Landing Page**:
 
@@ -562,7 +559,7 @@ Route::post('/form', [FormController::class, 'submitForm'])->name('form.submit')
     Route::get('/', [StaticPageController::class, 'landingPage'])->name('landing');
 ```
 
-</br>
+<br>
 
 ### Step 2: Add a Cancel Button to the Form Page
 
@@ -635,11 +632,11 @@ Route::post('/form', [FormController::class, 'submitForm'])->name('form.submit')
 </html>
 ```
 
-</br>
+<br>
 
 ### Step 3: Test the Navigation
 
-</br>
+<br>
 
 1. **Restart your Laravel development server again if required**:
 
@@ -655,8 +652,7 @@ Route::post('/form', [FormController::class, 'submitForm'])->name('form.submit')
 
     - Verify the "Cancel" button redirects back to the landing page.
 
-</br>
-</br>
+<br>
 
 ## Styling our App with Tailwind CSS
 
@@ -664,7 +660,8 @@ Route::post('/form', [FormController::class, 'submitForm'])->name('form.submit')
 - We will be using Tailwind CSS instead of Bootstrap.
 - So let's update the setup to work with Tailwind CSS:
 - We will also add "Go to Form" and "Cancel" buttons to make it easy to navigation between the views
-  </br>
+  
+<br>
 
 ### Step 1: Verify Tailwind CSS Installation
 
@@ -675,7 +672,7 @@ Route::post('/form', [FormController::class, 'submitForm'])->name('form.submit')
   npx tailwindcss init
 ```
 
-</br>
+<br>
 
 ### Step 2: Check Your Vite Configuration
 
@@ -702,7 +699,7 @@ Open the vite.config.js file and check the following:
   });
 ```
 
-</br>
+<br>
 
 ### Step 3: Check Your Blade Templates for the Correct References
 
@@ -713,7 +710,7 @@ removed the existing link references and replace them with the following:
   @vite(['resources/css/app.css', 'resources/js/app.js'])
 ```
 
-</br>
+<br>
 
 ### Step 4: Verify Tailwind Directives
 
@@ -725,7 +722,7 @@ removed the existing link references and replace them with the following:
 @tailwind utilities;
 ```
 
-</br>
+<br>
 
 ### Step 5: Run Vite Dev Server
 
@@ -738,7 +735,7 @@ removed the existing link references and replace them with the following:
 - If you visit the landing page or form page now, you will see the styles are not working properly.
   This is becuase we have not updated our views to use tailwind css, we will do this next.
 
-</br>
+<br>
 
 ### Step 6: Update the Landing Page to Use Tailwind CSS
 
@@ -772,7 +769,7 @@ removed the existing link references and replace them with the following:
 </html>
 ```
 
-</br>
+<br>
 
 ### Step 7: Update the Form Page to Use Tailwind CSS
 
@@ -869,15 +866,16 @@ removed the existing link references and replace them with the following:
 
 - Access your application at http://127.0.0.1:8000 and check if the styles and scripts load properly now.
 - Test the "Go to Form" and "Cancel" buttons to confirm navigation works seamlessly.
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-</br>
+
 
 ## Displaying the Submissions (with Pagination)
 
 - Lets create a view to display the submissions information,
   and have these use pagination to show 5 submissions per page.
-  </br>
-  </br>
+  
+<br>
 
 ### Step 1: Add a New Method to FormController
 
@@ -891,7 +889,7 @@ removed the existing link references and replace them with the following:
   }
 ```
 
-</br>
+<br>
 
 ### Step 2: Update the Routes
 
@@ -901,7 +899,7 @@ removed the existing link references and replace them with the following:
   Route::get('/submissions', [FormController::class, 'index'])->name('form.index');
 ```
 
-</br>
+<br>
 
 ### Step 3: Create the Submissions Blade View
 
@@ -997,7 +995,7 @@ touch resources/views/submissions.blade.php
 </html>
 ```
 
-</br>
+<br>
 
 ### Step 4: Update the Landing Page
 
@@ -1012,7 +1010,7 @@ touch resources/views/submissions.blade.php
 </a>
 ```
 
-</br>
+<br>
 
 ### Step 5: Test Your Application
 
@@ -1021,13 +1019,14 @@ touch resources/views/submissions.blade.php
 - Access your application at http://127.0.0.1:8000
 - Click the View Submissions button. You should see the list of submissions.
   (Note: you will only see the pagination if you have added 5 or more submissions.)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-  </br>
 
 ## Optional - Seed Test Data
 
 - If your submissions table is empty, you can seed some test data:
-  </br>
+  
+<br>
 
 ### Step 1. Create a Seeder
 
@@ -1073,7 +1072,7 @@ class SubmissionSeeder extends Seeder
 }
 ```
 
-</br>
+<br>
 
 ### Step 2. Add a Factory (if not already present)
 
@@ -1124,7 +1123,7 @@ class SubmissionFactory extends Factory
 }
 ```
 
-</br>
+<br>
 
 ### Step 3. Run the Seeder
 
@@ -1133,8 +1132,9 @@ class SubmissionFactory extends Factory
 ```
 
 - This will populate your database with dummy data, making it easier to test the pagination
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-  </br>
+
 
 ## Add a Redirect to the Landing Page
 
@@ -1165,7 +1165,6 @@ public function submitForm(Request $request)
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-</br>
 
 ## Add a Success Message to the Landing Page
 
@@ -1202,7 +1201,7 @@ public function submitForm(Request $request)
 </html>
 ```
 
-</br>
+<br>
 
 ### With these steps above, when you submit the form, you will:
 
@@ -1211,12 +1210,12 @@ public function submitForm(Request $request)
     - You can test this by Going to the Form View and making a submission.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-</br>
-</br>
+
+<br>
 
 # This completes the Basic Laravel Application!
 
-</br>
+<br>
 
 ## What we achieved in this Tutorial
 
@@ -1227,8 +1226,7 @@ public function submitForm(Request $request)
 - We Set up the Database and seeded some dummy data to test the pagination
 - We added a re-direction to the landing page with an alert message upon a successful submission
 
-  </br>
-  </br>
+  <br>
 
 ## In Part 2 of the Tutorial we will
 
@@ -1237,11 +1235,11 @@ public function submitForm(Request $request)
 - We will introduce a 'helper' class to help facilitate this
 - We will play with some css to get the stylimg working for some of the elements in the WYSIWYG editor
 
-</br>
-</br>
+<br>
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-</br>
-</br>
+
+<br>
 
 # Tutorial PART 2
 
@@ -1263,7 +1261,7 @@ public function submitForm(Request $request)
 - We will introduce a 'helper' class to help facilitate this
 - We will play with some css to get the stylimg working for some of the elements in the WYSIWYG editor
 
-  </br>
+  <br>
 
 ## Prerequisites
 
@@ -1273,8 +1271,8 @@ public function submitForm(Request $request)
 - Laragon (>= 6.0 220916) (we will be using PhpMyAdmin to access the database)
 - Laravel 11
 - Our Previously built basic Laravel Application (if you havent done this yet, you need to complete this first!)
+- 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-</br>
 
 ## Setup and Package Installation
 
@@ -1285,7 +1283,7 @@ public function submitForm(Request $request)
     - html to markdown converter - league/htmlToMarkdown
     - markdown to html converter - league/commonmark library
 
-</br>
+<br>
 
 ```bash
 # Install the required packages
@@ -1300,7 +1298,7 @@ Basically, Here's what they do:
 - league/html-to-markdown - Converts HTML content (eg User input from the WYSIWYG editor) to Markdown format
 - league/commonmark - A robust markdown parser & renderer that Converts Markdown content to HTML
 
-</br>
+<br>
 
 ```bash
 # Install npm dependencies
@@ -1309,15 +1307,15 @@ npm install @ckeditor/ckeditor5-build-classic
 
 - The Classic Version of the CKEditor from https://ckeditor.com
 - CKEditor is a modern, feature-rich and customisable JavaScript editor.
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-</br>
 
 ## Create Helper Functions
 
 - ### We will create a 'htmlToMarkdown' function we use the CommonMarkConverter to convert HTML to Markdown
 - ### We will also a 'markdownToHtml' function which uses the CommonMarkConverter to convert Markdown back to HTML:
 
-</br>
+<br>
 
 ### Step 1: Create a new PHP file app/helpers.php:
 
@@ -1325,7 +1323,7 @@ npm install @ckeditor/ckeditor5-build-classic
 touch app/helpers.php
 ```
 
-</br>
+<br>
 
 - Open app/helper.php and add the code below:
 
@@ -1517,6 +1515,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 ```
+<br>
 
 ### Step 5 - Testing your editor
 
@@ -1524,8 +1523,8 @@ document.addEventListener('DOMContentLoaded', () => {
   and convert it back to html to display on the Submissions index view.
   ...But... if you test this you will find that even though bold and italic works well, as does the multi-line saving,
   the paragraph headings are not working - Lets modify some of the code and add some custom css to enable this to be handled, converted and viewed properly
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-</br>
 
 ## Improving the editor by customising some of our options
 
@@ -1536,7 +1535,7 @@ document.addEventListener('DOMContentLoaded', () => {
     - An array of default options for Paragraph Heading styles:
     - An option to hide or show the menuBar at the top
 
-</br>
+<br>
 
 ```php
 import './bootstrap';
@@ -1583,6 +1582,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 ```
+<br>
 
 ### Step 2 - Update your HTML-to-Markdown conversion in your helper file (app/helpers.php):
 
@@ -1640,6 +1640,8 @@ if (!function_exists('markdownToHtml')) {
 
 ```
 
+<br>
+
 ### Step 3: Understanding the changes to our functions:
 
 ### Firstly in our 'htmlToMarkdown' function which uses the CommonMarkConverter to convert HTML to Markdown:
@@ -1671,7 +1673,7 @@ if (!function_exists('markdownToHtml')) {
     - Automatic URL linking.
     - Task lists (- [ ] and - [x] syntax).
 
-</br>
+<br>
 
 - 'html_input' => 'allow'
 
@@ -1682,8 +1684,8 @@ if (!function_exists('markdownToHtml')) {
 
   Prevents unsafe links (e.g., javascript: or other malicious URLs) from being included in the HTML output.
   This is a security measure to protect users from XSS attacks.
+  
   <p align="right">(<a href="#readme-top">back to top</a>)</p>
-  </br>
 
 ## Add Styles for Paragraph headings
 
@@ -1785,8 +1787,7 @@ if (!function_exists('markdownToHtml')) {
 - The Markdown-to-HTML conversion properly renders headings
 - The rendered headings are properly styled in both the editor and the submissions view
 
-</br>
-</br>
+<br>
 
 ## Adding more Styling options
 
@@ -1794,7 +1795,7 @@ if (!function_exists('markdownToHtml')) {
   Curremtly we are using the Classic Editor, but we can unlock and import more options by using the full editor version.
 - Let's update our code as follows, and we will add in font sizes and font colours.
 
-</br>
+<br>
 
 ### Step 1 - Modify our app.js to use the full CKEditor and import some of the plugins.
 
@@ -1913,7 +1914,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 ```
 
-</br>
+<br>
 
 ### Step 2 - update our app.css:
 
@@ -1967,7 +1968,7 @@ document.addEventListener('DOMContentLoaded', () => {
 }
 ```
 
-</br>
+<br>
 
 ### Step 3 - Test the editor.
 
@@ -1975,7 +1976,7 @@ document.addEventListener('DOMContentLoaded', () => {
 - Create a message using various font sizes and colours and submit it.
 - View the submission on the submission view and check that it displays correctly
 
-</br>
+<br>
 
 ## What we have Achieved
 
@@ -1986,9 +1987,8 @@ document.addEventListener('DOMContentLoaded', () => {
 - We have now unlocked some more options for our editor.
     - Added some differnt Font sizes to select from.
     - Added Font Colours (including a few default colours to select from)
+  
   <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-</br>
 
 ## Final Thoughts
 
@@ -1999,8 +1999,6 @@ document.addEventListener('DOMContentLoaded', () => {
 - Visit https://ckeditor.com/ to research and learn more about the different editors and options available for your editor.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-</br>
 
 ## Contact
 
@@ -2019,8 +2017,6 @@ Project GitHub Link: [my-laravel-app-WYSIWYG-editor-tutorial](https://github.com
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-</br>
-
 ## References
 
 ### Websites, libraries and media used to create the application and tutorial.
@@ -2032,8 +2028,6 @@ Project GitHub Link: [my-laravel-app-WYSIWYG-editor-tutorial](https://github.com
 - [CKEditor5](https://ckeditor.com/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-</br>
 
 ## License
 
@@ -2073,13 +2067,8 @@ SOFTWARE.
 [Tailwindcss.com]: https://img.shields.io/badge/Tailwindcss-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white
 [Tailwindcss-url]: https://tailwindcss.com
 [Livewire.com]: https://img.shields.io/badge/Livewire-4E56A6?style=for-the-badge&logo=livewire&logoColor=white
-[Livewire-url]: https://livewire.laravel.com
-[Inertia.com]: https://img.shields.io/badge/Inertia-9553E9?style=for-the-badge&logo=inertia&logoColor=white
-[Inertia-url]: https://inertiajs.com
 [Php.com]: https://img.shields.io/badge/Php-777BB4?style=for-the-badge&logo=php&logoColor=white
 [Php-url]: https://inertiajs.com
-[Spatie.be]: https://spatie.be
-[Spatie-url]: https://spatie.be/
 [Jetbrains.com]: https://img.shields.io/badge/PHPStorm---
 [PHPStorm-url]: https://www.jetbrains.com/phpstorm/
 [HTML-url]: https://developer.mozilla.org/en-US/docs/Web/HTML
