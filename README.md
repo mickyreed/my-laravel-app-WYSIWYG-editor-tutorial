@@ -2011,7 +2011,7 @@ document.addEventListener('DOMContentLoaded', () => {
 - We have added some additional css to get the stylimg working for some of the elements in the WYSIWYG editor
 - We have now unlocked some more options for our editor.
 
-  - Added some differnt Font sizes to select from.
+  - Added some different Font sizes to select from.
   - Added Font Colours (including a few default colours to select from)
 
   <p align="right">(<a href="#readme-top">back to top</a>)</p>
