@@ -661,7 +661,6 @@ Route::post('/form', [FormController::class, 'submitForm'])->name('form.submit')
 - As you may have noticed the example provided uses Bootstrap via a CDN.
 - We will be using Tailwind CSS instead of Bootstrap.
 - So let's update the setup to work with Tailwind CSS:
-- We will also add "Go to Form" and "Cancel" buttons to make it easy to navigation between the views
 
 <br>
 
