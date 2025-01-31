@@ -1396,11 +1396,11 @@ class ContentConverter
             "app/helpers.php"
         ]
     },
-    "autoload-dev": {
-        "psr-4": {
-            "Tests\\": "tests/"
-        }
-    },
+    //"autoload-dev": {
+    //    "psr-4": {
+    //        "Tests\\": "tests/"
+    //    }
+    //},
 ```
 
 - Now, as you have changed the autoload section in your composer.json file to load a helper file, you need to refresh Composer's autoload configuration
